@@ -18,22 +18,50 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Ansible vfricou roles documentation
+title: Roles Documentation
 email: vincent@fricouv.eu
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "/ansible" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://vfricou.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 domain: "vfricou.github.io"
 twitter_username: vfricou
 github_username:  vfricou
 
 # Build settings
-theme: minima
+theme: just-the-docs
 plugins:
   - jekyll-feed
+
+collections:
+  # Define a collection named "docs", its documents reside in the "_docs" directory
+  roles:
+    permalink: "/:collection/:path/"
+    output: true
+
+#color_scheme: dark
+
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+heading_anchors: true
+
+footer_content: "Copyright &copy; 2022 Vincent Fricou. Distributed by an <a href=\"https://github.com/pmarsceill/just-the-docs/tree/master/LICENSE.txt\">MIT license.</a>"
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+gh_edit_link: false # show or hide edit this page link
+
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -43,7 +71,10 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
+  - docs.iml
+  - Gemfile
+  - Gemfile.lock
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
