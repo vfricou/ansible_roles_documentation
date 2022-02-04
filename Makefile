@@ -9,4 +9,4 @@ gem_install:
 	@cd docs && bundle install
 
 run_serve:
-	@cd docs && bundle exec jekyll serve --incremental
+	@cd docs && bundle exec jekyll serve

@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Roles Documentation
+title: Ansible vfricou
 email: vincent@fricouv.eu
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -40,6 +40,20 @@ collections:
   roles:
     permalink: "/:collection/:path/"
     output: true
+
+just_the_docs:
+  # Define which collections are used in just-the-docs
+  collections:
+    # Reference the "docs" collection
+    roles:
+      # Give the collection a name
+      name: Roles
+      # Exclude the collection from the navigation
+      # Supports true or false (default)
+      nav_exclude: false
+      # Exclude the collection from the search
+      # Supports true or false (default)
+      search_exclude: false
 
 #color_scheme: dark
 
