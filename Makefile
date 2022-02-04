@@ -2,8 +2,11 @@
 .DEFAULT_GOAL=serve
 
 # install environment
-install:
+install: gem_install
+serve: gem_install run_serve
+
+gem_install:
 	@cd docs && bundle install
 
-serve:
+run_serve:
 	@cd docs && bundle exec jekyll serve --incremental
